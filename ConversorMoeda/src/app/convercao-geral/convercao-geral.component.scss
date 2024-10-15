@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    gap: 10px;
+  }
+  
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .mat-elevation-z8 {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  

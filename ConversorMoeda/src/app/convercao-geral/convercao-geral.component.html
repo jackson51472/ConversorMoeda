@@ -1,0 +1,18 @@
+<table mat-table [dataSource]="moedas" class="mat-elevation-z8">
+
+  <!-- Coluna: Moeda -->
+  <ng-container matColumnDef="moeda">
+    <th mat-header-cell *matHeaderCellDef> Moeda </th>
+    <td mat-cell *matCellDef="let moeda"> {{ moeda.nome }} </td>
+  </ng-container>
+
+  <!-- Coluna: Valor -->
+  <ng-container matColumnDef="valor">
+    <th mat-header-cell *matHeaderCellDef> Valor </th>
+    <td mat-cell *matCellDef="let moeda"> {{ moeda.valor | currency:'USD' }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
