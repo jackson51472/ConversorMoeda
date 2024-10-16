@@ -7,21 +7,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ConvercaogeralService {
-
   constructor(private http: HttpClient) { }
 
   getHeaders() {
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer' + environment.api_url + "pair/"
+        'Authorization': 'Bearer ' + environment.api_url
       })
     };
   }
 
-  listarConversao(): Observable<any> {
-  const url = environment.api_url + "latest/USD";
-  return this.http.get<any>(url, this.getHeaders());
-}
-
+  listarConversao(baseCurrency: string): Observable<any> {
+    const url = `${environment.api_url}latest/${baseCurrency}`;
+    return this.http.get(url, this.getHeaders());
+  }
 }

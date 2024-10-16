@@ -1,18 +1,41 @@
-<table mat-table [dataSource]="moedas" class="mat-elevation-z8">
+<form [formGroup]="conversionForm">
+  <mat-form-field>
+    <mat-label>Base Currency</mat-label>
+    <mat-select formControlName="baseCurrency">
+      <mat-option *ngFor="let currency of availableCurrencies" [value]="currency">
+        {{currency}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-  <!-- Coluna: Moeda -->
+  <mat-form-field>
+    <mat-label>Amount</mat-label>
+    <input matInput type="number" formControlName="amount">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Search Currency</mat-label>
+    <input matInput type="text" formControlName="searchTerm" placeholder="Search currency...">
+  </mat-form-field>
+</form>
+
+<table mat-table [dataSource]="moedasDataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="moeda">
     <th mat-header-cell *matHeaderCellDef> Moeda </th>
-    <td mat-cell *matCellDef="let moeda"> {{ moeda.nome }} </td>
+    <td mat-cell *matCellDef="let moeda"> {{moeda.nome}} </td>
   </ng-container>
 
-  <!-- Coluna: Valor -->
   <ng-container matColumnDef="valor">
     <th mat-header-cell *matHeaderCellDef> Valor </th>
-    <td mat-cell *matCellDef="let moeda"> {{ moeda.valor | currency:'USD' }} </td>
+    <td mat-cell *matCellDef="let moeda"> {{moeda.valor | currency:moeda.nome:'symbol':'1.2-2'}} </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-
 </table>
+
+<mat-paginator [pageSizeOptions]="pageSizeOptions"
+               showFirstLastButtons
+               aria-label="Select page of currency rates"
+               (page)="onPageChange($event)">
+</mat-paginator>

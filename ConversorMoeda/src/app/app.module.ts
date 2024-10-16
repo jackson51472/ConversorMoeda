@@ -17,6 +17,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -28,6 +33,8 @@ import { MatSelectModule } from '@angular/material/select';
     ConvercaoGeralComponent
   ],
   imports: [
+    HttpClientModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -38,6 +45,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatTableModule,
     MatButtonModule,
     MatIconModule,
+    MatPaginatorModule,
+    MatSortModule,
     FormsModule
   ],
   providers: [provideHttpClient(), provideAnimationsAsync()],

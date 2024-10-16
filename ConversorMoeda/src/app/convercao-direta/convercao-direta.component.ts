@@ -20,7 +20,6 @@ export class ConvercaoDiretaComponent implements OnInit {
   constructor(private convercaoService: ConvercaoDiretaService) {}
 
   ngOnInit(): void {
-    // Carrega as moedas disponíveis ao iniciar o componente.
     this.convercaoService.listarConversao().subscribe({
       next: (res) => {
         this.moedasDisponiveis = Object.keys(res.conversion_rates);
@@ -33,14 +32,12 @@ export class ConvercaoDiretaComponent implements OnInit {
     });
   }
 
-  // Filtra as moedas conforme o usuário digita na origem.
   filtrarMoedasOrigem(valor: string): void {
     this.moedasFiltradasOrigem = this.moedasDisponiveis.filter((moeda) =>
       moeda.toLowerCase().includes(valor.toLowerCase())
     );
   }
 
-  // Filtra as moedas conforme o usuário digita no destino.
   filtrarMoedasDestino(valor: string): void {
     this.moedasFiltradasDestino = this.moedasDisponiveis.filter((moeda) =>
       moeda.toLowerCase().includes(valor.toLowerCase())
