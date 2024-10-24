@@ -6,7 +6,7 @@ import { ConvercaoGeralComponent } from './convercao-geral/convercao-geral.compo
 
 const routes: Routes = [
 
-  { path: 'home', component: HomeComponent},
+  { path: '', component: HomeComponent},
   { path: 'direta', component: ConvercaoDiretaComponent},
   { path: 'geral', component: ConvercaoGeralComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redireciona para /home se a rota for vazia

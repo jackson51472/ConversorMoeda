@@ -21,6 +21,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -30,7 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     ConvercaoDiretaComponent,
-    ConvercaoGeralComponent
+    ConvercaoGeralComponent,
   ],
   imports: [
     HttpClientModule,
@@ -47,7 +51,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    RouterModule,
   ],
   providers: [provideHttpClient(), provideAnimationsAsync()],
   bootstrap: [AppComponent]

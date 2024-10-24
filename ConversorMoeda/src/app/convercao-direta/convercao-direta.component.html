@@ -1,7 +1,7 @@
-<div class="container">
+<div class="conversion-container">
   <h1>Conversão de Moedas</h1>
 
-  <form (ngSubmit)="converterMoeda()">
+  <form (ngSubmit)="converterMoeda()" class="form-container">
     <mat-form-field appearance="fill">
       <mat-label>Moeda de Origem</mat-label>
       <input
@@ -45,7 +45,10 @@
   </form>
 
   <div *ngIf="resultado !== null" class="resultado">
-    <p>Resultado: {{ valor }} {{ moedaOrigem }} = {{ resultado | number: '1.2-2' }} {{ moedaDestino }}</p>
+    <p>
+      Resultado: {{ valor }} {{ moedaOrigem }} = {{ resultado | number: '1.2-2' }}
+      {{ moedaDestino }}
+    </p>
   </div>
 
   <div *ngIf="isError" class="erro">
