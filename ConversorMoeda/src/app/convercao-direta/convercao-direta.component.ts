@@ -50,6 +50,21 @@ export class ConvercaoDiretaComponent implements OnInit {
         next: (res) => {
           this.resultado = res.conversion_result;
           this.isError = false;
+  
+          // Criação do objeto de conversão
+          const novaConversao = {
+            moedaOrigem: this.moedaOrigem,
+            moedaDestino: this.moedaDestino,
+            valor: this.valor,
+            resultado: this.resultado,
+            data: new Date().toISOString(),
+          };
+  
+          // Adicionando ao histórico no localStorage
+          const historicoString = localStorage.getItem('historicoConversoes');
+          const historico = historicoString ? JSON.parse(historicoString) : [];
+          historico.push(novaConversao);
+          localStorage.setItem('historicoConversoes', JSON.stringify(historico));
         },
         error: () => {
           this.isError = true;

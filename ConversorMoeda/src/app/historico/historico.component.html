@@ -1,0 +1,16 @@
+<div class="app-historico">
+  <div class="container">
+    <h3>Histórico de Conversões</h3>
+    <ul class="list-group">
+      <li *ngFor="let item of historico" class="list-group-item">
+        {{ item.valor }} {{ item.moedaOrigem }} =
+        {{ item.resultado }} {{ item.moedaDestino }}
+        ({{ item.data | date: 'dd/MM/yyyy HH:mm' }})
+      </li>
+    </ul>
+
+    <button (click)="limparHistorico()" class="btn btn-danger mt-2">
+      Limpar Histórico
+    </button>
+  </div>
+</div>

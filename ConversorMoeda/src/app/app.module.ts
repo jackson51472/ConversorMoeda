@@ -25,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
+import { HistoricoComponent } from './historico/historico.component';
 
 
 
@@ -35,6 +36,7 @@ import { RouterModule } from '@angular/router';
     HeaderComponent,
     ConvercaoDiretaComponent,
     ConvercaoGeralComponent,
+    HistoricoComponent,
   ],
   imports: [
     HttpClientModule,
