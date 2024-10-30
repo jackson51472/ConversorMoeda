@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { ConvercaoDiretaComponent } from './convercao-direta/convercao-direta.component';
 import { ConvercaoGeralComponent } from './convercao-geral/convercao-geral.component';
 import { HistoricoComponent } from './historico/historico.component';
+import { ListaMoedasComponent } from './lista-moedas/lista-moedas.component';
 
 const routes: Routes = [
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   { path: 'direta', component: ConvercaoDiretaComponent},
   { path: 'geral', component: ConvercaoGeralComponent},
   { path: 'historico', component: HistoricoComponent},
+  { path: 'moedas', component: ListaMoedasComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redireciona para /home se a rota for vazia
   { path: '**', redirectTo: '/home' } // Redireciona para /home se a rota não for encontrada
 ];

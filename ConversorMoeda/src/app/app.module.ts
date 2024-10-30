@@ -26,6 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
 import { HistoricoComponent } from './historico/historico.component';
+import { ListaMoedasComponent } from './lista-moedas/lista-moedas.component';
 
 
 
@@ -37,6 +38,7 @@ import { HistoricoComponent } from './historico/historico.component';
     ConvercaoDiretaComponent,
     ConvercaoGeralComponent,
     HistoricoComponent,
+    ListaMoedasComponent,
   ],
   imports: [
     HttpClientModule,
