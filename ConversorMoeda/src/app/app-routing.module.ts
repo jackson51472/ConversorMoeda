@@ -13,8 +13,8 @@ const routes: Routes = [
   { path: 'geral', component: ConvercaoGeralComponent},
   { path: 'historico', component: HistoricoComponent},
   { path: 'moedas', component: ListaMoedasComponent},
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redireciona para /home se a rota for vazia
-  { path: '**', redirectTo: '/home' } // Redireciona para /home se a rota não for encontrada
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+  { path: '**', redirectTo: '/home' } 
 ];
 
 @NgModule({
